@@ -18,9 +18,21 @@
     </div>
     <h1>Reddit Options</h1>
     <div class="options_holder">
-        <input type="text" placeholder="Jokes" ng-model="v_options.options.subreddit" />
-        <input type="number" placeholder="0" ng-model="v_options.options.time" />
-        <md-button class="options_button md-raised md-primary" type="submit" ng-click="v_options.handle.options(options_form)">Enter</md-button>
+        <div class="part_holder">
+            <p>https://www.reddit.com/r/</p>
+            <input type="text" placeholder="Jokes" ng-model="v_options.options.subreddit" />
+        </div>
+        <div class="part_holder">
+            <p>Notification duration in seconds:<br/>(0 for maximum)</p>
+            <input type="number" placeholder="0" ng-model="v_options.options.time" />
+        </div>
+        <div class="part_spinner">
+            <md-progress-circular md-mode="indeterminate" ng-class="{show: v_options.is_active}"></md-progress-circular>
+        </div>
+        <div class="part_holder">
+            <md-button class="options_button md-raised md-primary" ng-click="v_options.handle.start()">Start</md-button>
+            <md-button class="options_button md-raised md-warn" ng-click="v_options.handle.stop()">Stop</md-button>
+        </div>
     </div>
     <script src="../lib/app.js"></script>
     <script src="../lib/service_ipc.js"></script>

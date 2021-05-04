@@ -6,5 +6,5 @@ app.config(function ($mdThemingProvider) {
     "use strict";
     $mdThemingProvider.theme('default')
         .dark()
-        .primaryPalette('grey');
+        .primaryPalette('green');
 });

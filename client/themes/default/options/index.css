@@ -16,7 +16,20 @@ h1 {
     -webkit-app-region: no-drag;
 }
 
-.options_holder input {
+.options_holder .part_holder {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.options_holder .part_holder p {
+    color: #ffffff;
+    font-size: 20px;
+    -webkit-app-region: drag;
+    text-align: center;
+}
+
+.options_holder .part_holder input {
     width: 200px;
     margin: 0px 10px;
     border: 0;
@@ -24,6 +37,19 @@ h1 {
     padding: 5px;
     color: #ffffff;
     font-size: 20px;
+}
+
+.options_holder .part_spinner {
+    -webkit-app-region: drag;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.options_holder .part_spinner .show {
+    visibility: visible;
 }
 
 .options_holder .options_button {

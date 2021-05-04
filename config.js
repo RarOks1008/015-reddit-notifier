@@ -2,8 +2,8 @@
 var CONFIG = {
     WINDOW: {
         OPTIONS: {
-            width: 320,
-            height: 400,
+            width: 550,
+            height: 385,
 
             resizable: false,
 

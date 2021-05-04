@@ -2,9 +2,13 @@
 app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
     "use strict";
 
-    function options() {
+    function start() {
         serviceIpc.call('start', {});
         $window.close();
+    }
+
+    function stop() {
+        console.log("ovde stopirati funkciju");
     }
 
     function quit() {
@@ -13,13 +17,15 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
 
     function init() {
         $scope.v_options = {
+            is_active: false,
             options: {
-                subreddit: '',
+                subreddit: 'FreeGamesOnSteam',
                 time: 0
             },
             handle: {
-                options: options,
-                quit: quit
+                start: start,
+                quit: quit,
+                stop: stop
             }
         };
     }
