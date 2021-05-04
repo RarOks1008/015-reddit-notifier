@@ -11,12 +11,6 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
         serviceIpc.call('quit');
     }
 
-    function debug_open(event) {
-        if (event && event.altKey && event.shiftKey) {
-            serviceIpc.call('window_debug', {});
-        }
-    }
-
     function init() {
         $scope.v_options = {
             options: {
@@ -25,8 +19,7 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
             },
             handle: {
                 options: options,
-                quit: quit,
-                debug_open: debug_open
+                quit: quit
             }
         };
     }

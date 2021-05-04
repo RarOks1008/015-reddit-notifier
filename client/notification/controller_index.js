@@ -3,12 +3,6 @@
 app.controller('controllerNotification', function ($scope, serviceIpc) {
     "use strict";
 
-    function debug_open(event) {
-        if (event && event.altKey && event.shiftKey) {
-            serviceIpc.call('window_debug', {});
-        }
-    }
-
     function logout() {
         console.log("ovde treba da se ugasi notifikacija");
         serviceIpc.call('change_options');
@@ -23,7 +17,6 @@ app.controller('controllerNotification', function ($scope, serviceIpc) {
     function init() {
         $scope.v_notification = {
             handle: {
-                debug_open: debug_open,
                 logout: logout
             }
         };

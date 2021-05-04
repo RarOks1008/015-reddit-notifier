@@ -22,9 +22,6 @@ function ipc_event(event, data) {
         main_window.createWindow(CONFIG.WINDOW.NOTIFICATION, data.params.program);
         params = data.params;
         break;
-    case 'window_debug':
-        main_window.openDevTools(data.sender);
-        break;
     case 'ready':
         main_window.sendEvent('start_back', params);
         break;
