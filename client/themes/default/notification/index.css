@@ -1,0 +1,20 @@
+.background {
+    -webkit-app-region: no-drag;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.visible_on_mouse span, .visible_on_mouse .md-button {
+    visibility: hidden;
+}
+
+.visible_on_mouse:hover > span, .visible_on_mouse:hover > .md-button {
+    visibility: visible;
+}
+
+::-webkit-scrollbar {
+    height: 15px;
+}

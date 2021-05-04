@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redditnotifier">
+<head>
+    <link rel="stylesheet" href="../lib/3rd/angular/includes/angular-material.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../themes/default/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../themes/default/options/index.css"/>
+
+    <script src="../lib/3rd/angular/includes/angular.min.js"></script>
+    <script src="../lib/3rd/angular/includes/angular-animate.min.js"></script>
+    <script src="../lib/3rd/angular/includes/angular-aria.min.js"></script>
+    <script src="../lib/3rd/angular/includes/angular-messages.min.js"></script>
+    <script src="../lib/3rd/angular/includes/angular-material.min.js"></script>
+</head>
+<body ng-controller="controllerOptions">
+    <div class="window_header">
+        <span ng-click="v_options.handle.debug_open($event)"></span>
+        <md-button class="quit_button" ng-click="v_options.handle.quit()" aria-label="Close"></md-button>
+    </div>
+    <h1>Reddit Options</h1>
+    <div class="options_holder">
+        <input type="text" placeholder="Jokes" ng-model="v_options.options.subreddit" />
+        <input type="number" placeholder="0" ng-model="v_options.options.time" />
+        <md-button class="options_button md-raised md-primary" type="submit" ng-click="v_options.handle.options(options_form)">Enter</md-button>
+    </div>
+    <script src="../lib/app.js"></script>
+    <script src="../lib/service_ipc.js"></script>
+    <script src="controller_index.js"></script>
+</body>
+</html>

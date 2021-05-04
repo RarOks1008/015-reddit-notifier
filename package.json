@@ -1,0 +1,26 @@
+{
+  "name": "reddit-notifier",
+  "version": "1.0.0",
+  "description": "App to notify when a new subreddit post gets posted.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir"
+  },
+  "build": {
+    "appId": "reddit.notifier",
+    "productName": "RedditNotifier"
+  },
+  "keywords": [
+    "app",
+    "notifier",
+    "reddit",
+    "program"
+  ],
+  "author": "RarOks 1008",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^7.3.3"
+  }
+}
