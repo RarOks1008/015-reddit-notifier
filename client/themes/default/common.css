@@ -22,17 +22,7 @@ body {
 
 .window_header {
     display: flex;
-    justify-content: space-between;
-}
-
-.window_header span {
-    width: 64px;
-    height: 64px;
-    background-image: url('logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-    -webkit-app-region: no-drag;
+    justify-content: flex-end;
 }
 
 .window_header .quit_button {
