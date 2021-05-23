@@ -36,6 +36,7 @@ var CONFIG = {
             minimizable: false,
             fullscreenable: false,
             maximizable: false,
+            alwaysOnTop: true,
             title: 'Notification',
             window_name: 'notification'
         }
