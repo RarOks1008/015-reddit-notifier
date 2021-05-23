@@ -21,7 +21,7 @@
         <img ng-src="{{v_notification.notification_params.image}}" ng-click="v_notification.handle.go_to_notification()" alt="{{v_notification.notification_params.title}}"/>
         <div class="notification_text">
             <p class="notification_text_header" ng-click="v_notification.handle.go_to_notification()">{{v_notification.notification_params.title}}</p>
-            <p class="notification_text_additional">({{v_notification.notification_params.flair}})</p>
+            <p class="notification_text_additional">({{v_notification.notification_params.flair || 'no flair'}})</p>
         </div>
     </div>
 
