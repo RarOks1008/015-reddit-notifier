@@ -31,3 +31,5 @@ App for getting notified when a new post is posted on a subreddit made in Electr
 
 - izbaci sve console.logove i sredi njihove comment-e
 - sredi i sve TODO komentare ako postoje neki
+
+- proveri sto se nekad ne otvori tray

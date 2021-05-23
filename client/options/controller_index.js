@@ -3,7 +3,8 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
     "use strict";
 
     function start() {
-        console.log("ako je vec startovano ne treba da se salje opet start");
+        if ($scope.v_options.is_active) { return; }
+        if (!$scope.v_options.options.subreddit) { return; }
         serviceIpc.call('start', {subreddit: $scope.v_options.options.subreddit, time: $scope.v_options.options.time});
         $window.close();
     }
@@ -17,11 +18,20 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
         $window.close();
     }
 
+    function event_options_start_back(event, content) {
+        if (!event) { return; }
+        if (!content) { return; }
+        if (!content.options_params) { return; }
+        $scope.v_options.is_active = content.is_active;
+        $scope.v_options.options.subreddit = content.options_params.subreddit;
+        $scope.v_options.options.time = content.options_params.time;
+    }
+
     function init() {
         $scope.v_options = {
             is_active: false,
             options: {
-                subreddit: 'FreeGamesOnSteam',
+                subreddit: '',
                 time: 0
             },
             handle: {
@@ -30,7 +40,9 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
                 stop: stop
             }
         };
-        console.log("na initu treba da se dobiju propertyji koji se vec koriste");
+
+        serviceIpc.subscribe($scope, 'options_start_back', event_options_start_back);
     }
     init();
+    serviceIpc.call('options_ready', {});
 });

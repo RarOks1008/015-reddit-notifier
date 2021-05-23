@@ -9,7 +9,11 @@ var electron = require('electron'),
     main_getter = require('./lib/main_getter'),
     main_tray = require('./lib/main_tray'),
 
-    options_params,
+    options_params = {
+        subreddit: 'FreeGamesOnSteam',
+        time: 0
+    },
+    watch_started = false,
     params;
 
 function ipc_event(event, data) {
@@ -20,16 +24,16 @@ function ipc_event(event, data) {
 
     switch (event) {
     case 'start':
+        if (watch_started) { return; }
+        watch_started = true;
         main_getter.startWatch(data.params);
         options_params = data.params;
         break;
     case 'notification_ready':
-        main_window.sendEvent('start_back', params);
+        main_window.sendEvent('notification_start_back', params);
         break;
-    case 'change_options':
-        main_window.createWindow(CONFIG.WINDOW.OPTIONS);
-        main_window.closeWindow(CONFIG.WINDOW.NOTIFICATION.window_name);
-        break;
+    case 'options_ready':
+        main_window.sendEvent('options_start_back', {is_active: watch_started, options_params: options_params});
     }
 }
 function init() {

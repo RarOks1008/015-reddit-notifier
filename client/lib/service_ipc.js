@@ -1,7 +1,7 @@
 /*global require,angular,app*/
 app.service('serviceIpc', function ($timeout) {
     "use strict";
-    var EVENTS = ['start_back'],
+    var EVENTS = ['notification_start_back', 'options_start_back'],
         this_service,
         ipc,
         emit_scopes = {};
