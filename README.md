@@ -1,8 +1,8 @@
 # 015-reddit-notifier
 App for getting notified when a new post is posted on a subreddit made in Electron and AngularJS
 
-## TODO
+build it with the command       npx electron-packager .
 
-- ubaci instalaciju za app preko nekog build-a
+## TODO
 
 - sredi readme i ubaci slike kako izgleda otprilike app na github
