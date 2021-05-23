@@ -18,12 +18,8 @@ function ipc_event(event, data) {
     if (!data.sender) { return; }
 
     switch (event) {
-    case 'quit':
-        app.quit();
-        break;
     case 'start':
         main_getter.startWatch(data.params);
-        main_window.createWindow(CONFIG.WINDOW.NOTIFICATION);
         params = data.params;
         break;
     case 'ready':
@@ -43,6 +39,14 @@ function init() {
     main_ipc.start(ipc_event);
     main_window.createWindow(CONFIG.WINDOW.OPTIONS);
     main_tray.start();
+
+    main_tray.when('open_options', function() {
+        if (main_window.existsWindow('options')) { return; }
+        main_window.createWindow(CONFIG.WINDOW.OPTIONS);
+    })
+    .when('quit_application', function() {
+        app.quit();
+    });
 }
 function stopClosing() {
     preventDefault();
