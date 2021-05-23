@@ -40,6 +40,10 @@ function ipc_event(event, data) {
         watch_started = false;
         main_getter.stopWatch();
         break;
+    case 'go_to_notification':
+        console.log(data.params);
+        console.log(data.params.url);
+        break;
     }
 }
 function init() {
