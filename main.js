@@ -9,6 +9,7 @@ var electron = require('electron'),
     main_getter = require('./lib/main_getter'),
     main_tray = require('./lib/main_tray'),
 
+    options_params,
     params;
 
 function ipc_event(event, data) {
@@ -20,16 +21,14 @@ function ipc_event(event, data) {
     switch (event) {
     case 'start':
         main_getter.startWatch(data.params);
-        params = data.params;
+        options_params = data.params;
         break;
-    case 'ready':
+    case 'notification_ready':
         main_window.sendEvent('start_back', params);
         break;
     case 'change_options':
         main_window.createWindow(CONFIG.WINDOW.OPTIONS);
         main_window.closeWindow(CONFIG.WINDOW.NOTIFICATION.window_name);
-        params.program = '';
-        params.language = '';
         break;
     }
 }
@@ -46,6 +45,11 @@ function init() {
     })
     .when('quit_application', function() {
         app.quit();
+    });
+
+    main_getter.when('open_notification', function(data) {
+        params = data.params;
+        main_window.createWindow(CONFIG.WINDOW.NOTIFICATION);
     });
 }
 function stopClosing() {

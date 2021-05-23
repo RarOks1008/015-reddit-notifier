@@ -5,12 +5,14 @@ app.controller('controllerNotification', function ($scope, serviceIpc) {
 
     function logout() {
         console.log("ovde treba da se ugasi notifikacija");
+        console.log("kad se ugasi notifikacija, i na odlazak na link i na quit dugme, mora da se posalje u main_getter da se proveri dal odma ima da se otvori nov window za notifikaciju")
         serviceIpc.call('change_options');
     }
 
     function event_start_back(event, content) {
         if (!event) { return; }
         if (!content) { return; }
+        console.log(content);
         console.log("TODO doso mi ovde event! tu treba datu da pokupim");
     }
 
@@ -25,5 +27,5 @@ app.controller('controllerNotification', function ($scope, serviceIpc) {
     }
 
     init();
-    serviceIpc.call('ready', {});
+    serviceIpc.call('notification_ready', {});
 });
