@@ -25,7 +25,9 @@ App for getting notified when a new post is posted on a subreddit made in Electr
 - u notifikaciji slika, naslov i klik na notifikaciju otvara taj link, ima i dugme da se ugasi sam taj window
 
 - treba i mogucnost da ima i tray i da se iz tray-a otvara opet options window
+- iz tray-a moze i da se ugasi sam app
 
 - mora da ima i mogucnost da se pokazuje neki spiner kad je u toku listener da se ne bi zaboravio
 
 - izbaci sve console.logove i sredi njihove comment-e
+- sredi i sve TODO komentare ako postoje neki
