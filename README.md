@@ -27,3 +27,5 @@ App for getting notified when a new post is posted on a subreddit made in Electr
 - treba i mogucnost da ima i tray i da se iz tray-a otvara opet options window
 
 - mora da ima i mogucnost da se pokazuje neki spiner kad je u toku listener da se ne bi zaboravio
+
+- izbaci sve console.logove i sredi njihove comment-e

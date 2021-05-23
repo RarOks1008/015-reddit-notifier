@@ -6,6 +6,7 @@ var electron = require('electron'),
 
     main_ipc = require('./lib/main_ipc'),
     main_window = require('./lib/main_window'),
+    main_getter = require('./lib/main_getter'),
     params;
 
 function ipc_event(event, data) {
@@ -16,10 +17,11 @@ function ipc_event(event, data) {
 
     switch (event) {
     case 'quit':
-        electron.app.quit();
+        app.quit();
         break;
     case 'start':
-        main_window.createWindow(CONFIG.WINDOW.NOTIFICATION, data.params.program);
+        main_getter.startWatch(data.params);
+        main_window.createWindow(CONFIG.WINDOW.NOTIFICATION);
         params = data.params;
         break;
     case 'ready':
