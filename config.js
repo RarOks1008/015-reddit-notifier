@@ -3,7 +3,7 @@ var CONFIG = {
     WINDOW: {
         OPTIONS: {
             width: 550,
-            height: 385,
+            height: 350,
 
             resizable: false,
 
@@ -21,8 +21,8 @@ var CONFIG = {
             window_name: 'options'
         },
         NOTIFICATION: {
-            width: 1024,
-            height: 500,
+            width: 400,
+            height: 50,
 
             resizable: false,
 

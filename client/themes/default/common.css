@@ -21,8 +21,9 @@ body {
 }
 
 .window_header {
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .window_header .quit_button {
