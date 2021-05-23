@@ -25,6 +25,7 @@ function ipc_event(event, data) {
     switch (event) {
     case 'start':
         if (watch_started) { return; }
+        if (!data.params) { return; }
         watch_started = true;
         main_getter.startWatch(data.params);
         options_params = data.params;
@@ -41,8 +42,9 @@ function ipc_event(event, data) {
         main_getter.stopWatch();
         break;
     case 'go_to_notification':
-        console.log(data.params);
-        console.log(data.params.url);
+        if (!data.params) { return; }
+        if (!data.params.url) { return; }
+        electron.shell.openExternal(data.params.url);
         break;
     }
 }
