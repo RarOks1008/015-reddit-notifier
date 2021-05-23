@@ -10,8 +10,9 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
     }
 
     function stop() {
-        console.log("ovde stopirati funkciju");
-        console.log("i ovde last_post izbrisati opet iz main gettera");
+        if (!$scope.v_options.is_active) { return; }
+        serviceIpc.call('stop', {});
+        $scope.v_options.is_active = false;
     }
 
     function quit() {

@@ -34,6 +34,12 @@ function ipc_event(event, data) {
         break;
     case 'options_ready':
         main_window.sendEvent('options_start_back', {is_active: watch_started, options_params: options_params});
+        break;
+    case 'stop':
+        if (!watch_started) { return; }
+        watch_started = false;
+        main_getter.stopWatch();
+        break;
     }
 }
 function init() {
