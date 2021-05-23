@@ -14,8 +14,7 @@ app.controller('controllerOptions', function ($scope, $window, serviceIpc) {
     }
 
     function quit() {
-        console.log("ovde ne treba quit nego da se minimizuje dole");
-        serviceIpc.call('quit');
+        $window.close();
     }
 
     function init() {

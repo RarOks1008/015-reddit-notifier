@@ -7,6 +7,8 @@ var electron = require('electron'),
     main_ipc = require('./lib/main_ipc'),
     main_window = require('./lib/main_window'),
     main_getter = require('./lib/main_getter'),
+    main_tray = require('./lib/main_tray'),
+
     params;
 
 function ipc_event(event, data) {
@@ -40,6 +42,11 @@ function init() {
 
     main_ipc.start(ipc_event);
     main_window.createWindow(CONFIG.WINDOW.OPTIONS);
+    main_tray.start();
+}
+function stopClosing() {
+    preventDefault();
 }
 
 app.on('ready', init);
+app.on('window-all-closed', stopClosing);
