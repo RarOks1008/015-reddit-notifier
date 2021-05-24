@@ -28,10 +28,6 @@ When right clicked, the you can open the options window or quit the applicaiton.
 
 ## Other remarks
 
-### Download the program for windows
-
-- [Download Link](https://github.com/RarOks1008/015-reddit-notifier/blob/main/git-image/reddit-notifier-win32-x64.zip "Download Link")
-
 ### How to start and build the project
 
 - run ```npm install``` to install the necessary dependencies
