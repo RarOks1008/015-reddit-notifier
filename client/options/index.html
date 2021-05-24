@@ -23,8 +23,8 @@
             <input type="text" placeholder="Jokes" ng-model="v_options.options.subreddit" />
         </div>
         <div class="part_holder">
-            <p>Notification duration in seconds:<br/>(0 for maximum)</p>
-            <input type="number" placeholder="0" ng-model="v_options.options.time" />
+            <p>Check for new posts in seconds:<br/>(0 for every minute)</p>
+            <input type="number" placeholder="0" ng-model="v_options.options.time" min="0" />
         </div>
         <div class="part_spinner">
             <md-progress-circular md-mode="indeterminate" ng-class="{show: v_options.is_active}"></md-progress-circular>
